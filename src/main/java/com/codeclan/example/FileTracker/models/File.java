@@ -3,8 +3,6 @@ package com.codeclan.example.FileTracker.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "files")
@@ -23,7 +21,7 @@ public class File {
     @Column(name = "size")
     private int size;
 
-    @JsonIgnoreProperties(value = "folders")
+    @JsonIgnoreProperties(value = "folder")
     @ManyToOne
     @JoinColumn(name = "folder_id", nullable = false)
     private Folder folder;
